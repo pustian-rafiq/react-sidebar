@@ -1,13 +1,12 @@
-.sidebar-container{
+/* .sidebar-container{
     background-color: rebeccapurple;
     width: 200px;
     height: 100vh;
     padding: 30px 20px;
     transition: all 1s ease;
-}
+} */
 .sidebarMenucontainer{
     background-color: rebeccapurple;
-    width: 30px;
     height: 100vh;
     padding: 30px 20px;
     transition: all 1s ease;

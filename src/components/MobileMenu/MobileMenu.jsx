@@ -8,7 +8,7 @@ const MobileMenu = ({isOpen,setIsOpen}) => {
       
   return (
     <>
-      <div className={isOpen ? "sidebarMenucontainer" : "sidebar-container"}>
+      <div className="sidebarMenucontainer">
         <FaBars className="barIcon" onClick={toggleMenu} />
 
         <div className="top-section">

@@ -9,7 +9,7 @@ const Sidebar = ({isOpen, setIsOpen}) => {
   }
   return (
     <>
-      <div className={isOpen ? {sidebarMenucontainer} : "sidebar-container"}>
+      <div className="sidebar-container">
         <FaBars className="barIcon" onClick={toggleMenu} />
        
           <div className="top-section">
