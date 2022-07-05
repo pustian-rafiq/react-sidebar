@@ -1,20 +1,36 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Dashboard from './pages/Dashboard'
-import Users from './pages/Users'
-import Messages from './pages/Messages'
-import Analytics from './pages/Analytics'
-import FileManager from './pages/FileManager'
-import Order from './pages/Order'
-import Saved from './pages/Saved'
-import Setting from './pages/Setting'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Dashboard from "./pages/Dashboard";
+import Users from "./pages/Users";
+import Messages from "./pages/Messages";
+import Analytics from "./pages/Analytics";
+import FileManager from "./pages/FileManager";
+import Order from "./pages/Order";
+import Saved from "./pages/Saved";
+import Setting from "./pages/Setting";
+import Sidebar from "./components/Sidebar";
+import MobileMenu from "./components/MobileMenu/MobileMenu";
+import { useState } from "react";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+
   return (
     <>
       <BrowserRouter>
-        <Routes>
-        <Route path="/" element={<Dashboard />} />
+     
+        <div className="wrapper">
+          <div className="leftSidebar">
+            {
+              isOpen ? <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} /> 
+              : 
+              <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+            }
+          </div>
+          <div className="mainBody">
+          <Routes>
+          <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/analytics" element={<Analytics />} />
@@ -25,6 +41,10 @@ function App() {
 
           <Route path="*" element={<> not found</>} />
         </Routes>
+          </div>
+        </div>
+
+     
       </BrowserRouter>
     </>
   );
